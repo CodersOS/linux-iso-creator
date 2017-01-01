@@ -1,5 +1,6 @@
 tmp/*
 toiso
-dev/*
-proc
-sys
+dev/pts/*
+proc/*
+sys/*
+.dockerenv
