@@ -16,7 +16,12 @@ cd "$work"
 
 echo "01 > create the file system"
 mkdir -p "$chroot"
-debootstrap --arch="$ARCH" "$RELEASE" "$chroot"
+if ! debootstrap --arch="$ARCH" "$RELEASE" "$chroot" 
+then
+  echo "01 > debootstrap failed"
+  cat "$chroot/debootstrap/debootstrap.log"
+  exit 1
+fi
 
 echo "01 > prepare the os"
 mount --bind /dev "$chroot/dev"
