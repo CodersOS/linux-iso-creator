@@ -18,18 +18,25 @@ You may wan to change the following variables in the
   If you change the release, also change [the sources][h-sources]
 
 Sources
--------
+~~~~~~~
 
 The [sources.list](sources.list) file is generated from
 [this form][sources-generator].
 Please put the output of the website into the following files:
 
-- [sources.list](sources.list) for the **Sources List**.
-- [gpg-keys.sh](gpg-keys.sh) for the **GPG Keys**
+- [sources.list][sources_list] for the **Sources List**.
+- [gpg keys][gpg] for the **GPG Keys** section.
+
+ISO
+
+TODO: set link in heading of https://github.com/CodersOS/iso-base
 
 
 
 
+
+[sources_list]: chroot-update/etc/apt/sources.list
+[gpg]: chroot-update/iso-creation/gpg-keys.sh
 [sources-generator]: https://repogen.simplylinux.ch/
 [chroot]: https://help.ubuntu.com/community/LiveCDCustomizationFromScratch#Make_the_ChRoot_Environment
 [ubuntu-releases]: https://wiki.ubuntu.com/Releases

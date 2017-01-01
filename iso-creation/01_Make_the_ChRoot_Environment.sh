@@ -1,16 +1,32 @@
 #!/bin/bash
-
+#
+# See https://help.ubuntu.com/community/LiveCDCustomizationFromScratch#Make_the_ChRoot_Environment
+#
+#
 source "`dirname \"$0\"`/configuration.sh"
 
-apt-get install debootstrap
+# install required packages
+apt-get -qq update
+apt-get -y -qq install debootstrap
 
+# create the folder for the iso
+mkdir -p "$work"
 cd "$work"
 
-sudo debootstrap --arch=$ARCH $RELEASE "$chroot"
+# create the file system
+mkdir -p "$chroot"
+sudo debootstrap --arch="$ARCH" "$RELEASE" "$chroot"
 
-sudo mount --bind /dev "$chroot/dev"
+# prepare the os
+mount --bind /dev "$chroot/dev"
 
-sudo cp /etc/hosts chroot/etc/hosts
-sudo cp /etc/resolv.conf chroot/etc/resolv.conf
-sudo cp "$sources_list" chroot/etc/apt/sources.list
+cp /etc/hosts "$chroot/etc/hosts"
+cp /etc/resolv.conf "$chroot/etc/resolv.conf"
+
+# update the chroot environment
+cp -r "$chroot_update/"* "$chroot"
+
+
+
+
 
