@@ -3,6 +3,7 @@
 # See https://help.ubuntu.com/community/LiveCDCustomizationFromScratch#Make_the_ChRoot_Environment
 #
 #
+set -e
 source "`dirname \"$0\"`/configuration.sh"
 
 # install required packages
@@ -26,7 +27,7 @@ cp /etc/resolv.conf "$chroot/etc/resolv.conf"
 # update the chroot environment
 cp -r "$chroot_update/"* "$chroot"
 
-
+chroot chroot "/iso-creation/01_Make_the_ChRoot_Environment.sh"
 
 
 
