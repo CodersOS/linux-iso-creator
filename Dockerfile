@@ -1,8 +1,20 @@
 FROM ubuntu:16.04
 
-RUN apt-get -qq update && apt-get -y -qq install debootstrap syslinux squashfs-tools genisoimage
+RUN apt-get -qq update && \
+    apt-get --yes upgrade && \
+    apt-get -y -qq install --no-install-recommends syslinux squashfs-tools genisoimage && \
+    apt-get -y -qq install --no-install-recommends ubuntu-standard casper lupin-casper discover laptop-detect os-prober linux-generic && \
+    apt-get -y -qq install --no-install-recommends network-manager && \
+    apt-get clean
 
-ADD iso-creation /iso-creation
-RUN /iso-creation/install.sh
+RUN mkdir /toiso
+ADD toiso/configuration.sh /toiso/configuration.sh
+ADD toiso/remove_linux_kernels.sh /toiso/remove_linux_kernels.sh
+RUN /toiso/remove_linux_kernels.sh
+ADD toiso/clean_up.sh /toiso/clean_up.sh
+RUN /toiso/clean_up.sh
+ADD toiso/download_iso.sh /toiso/download_iso.sh
+RUN /toiso/download_iso.sh
+ADD toiso/* /toiso/
 
-COMMAND iso-creation/command.sh
+CMD /toiso/command.sh
