@@ -3,7 +3,7 @@ set -e
 
 rm -f /var/lib/dbus/machine-id
 
-# restore the backup
+echo "02 > restore the backup"
 rm -f /sbin/initctl
 dpkg-divert --rename --remove /sbin/initctl
 if [ ! -f /sbin/initctl ] && [ -f /sbin/initctl.bak ]
@@ -11,6 +11,7 @@ then
   mv /sbin/initctl.bak /sbin/initctl
 fi
 
+echo "02 > remove old kernels"
 ls /boot/vmlinuz-**.**.**-**-generic > list.txt
 sum=$(cat list.txt | grep '[^ ]' | wc -l)
 
@@ -21,7 +22,7 @@ fi
 rm list.txt
 
 
-# clean up
+echo "02 > clean up"
 apt-get clean
 
 rm -rf /tmp/*

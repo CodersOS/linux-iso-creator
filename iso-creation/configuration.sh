@@ -22,13 +22,13 @@ IMAGE_NAME="CodersOS"
 #
 #
 # the location of the iso and the file system of the iso
-work="~/work"
+work="/work"
 
 # the location of the chroot environment
 chroot="$work/chroot"
 
 # the location of the iso-creation folder
-iso_creation="~/iso-creation"
+iso_creation="/iso-creation"
 
 # the location of the sources.list file
 sources_list="$iso_creation/sources.list"
