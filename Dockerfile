@@ -1,4 +1,4 @@
-FROM ubuntu:16.04
+FROM codersos/ubuntu-debootstrap
 
 RUN apt-get -qq update && \
     apt-get --yes upgrade && \
