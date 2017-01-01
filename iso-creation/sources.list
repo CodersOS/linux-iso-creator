@@ -1,0 +1,52 @@
+# from https://repogen.simplylinux.ch/
+
+#------------------------------------------------------------------------------#
+#                            OFFICIAL UBUNTU REPOS                             #
+#------------------------------------------------------------------------------#
+
+
+###### Ubuntu Main Repos
+deb http://de.archive.ubuntu.com/ubuntu/ xenial main restricted universe multiverse 
+
+###### Ubuntu Update Repos
+deb http://de.archive.ubuntu.com/ubuntu/ xenial-security main restricted universe multiverse 
+
+###### Ubuntu Partner Repo
+deb http://archive.canonical.com/ubuntu xenial partner
+
+#------------------------------------------------------------------------------#
+#                           UNOFFICIAL UBUNTU REPOS                            #
+#------------------------------------------------------------------------------#
+
+
+###### 3rd Party Binary Repos
+
+#### Dropbox PPA - http://dropbox.com
+## Run this command: sudo apt-key adv --keyserver pgp.mit.edu --recv-keys 5044912E
+deb http://linux.dropbox.com/ubuntu/ xenial main
+
+#### GetDeb - http://www.getdeb.net
+## Run this command: wget -q -O- http://archive.getdeb.net/getdeb-archive.key | sudo apt-key add -
+deb http://archive.getdeb.net/ubuntu xenial-getdeb apps
+
+#### Google Chrome Browser - http://www.google.com/linuxrepositories/
+## Run this command: wget -q https://dl.google.com/linux/linux_signing_key.pub -O- | sudo apt-key add -
+deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main
+
+#### Opera - http://www.opera.com/
+## Run this command: sudo wget -O - http://deb.opera.com/archive.key | sudo apt-key add -
+deb http://deb.opera.com/opera/ stable non-free
+
+#### Oracle Java (JDK) Installer PPA - http://www.webupd8.org/2012/01/install-oracle-java-jdk-7-in-ubuntu-via.html
+## Run this command: sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys EEA14886
+deb http://ppa.launchpad.net/webupd8team/java/ubuntu vivid main
+
+#### ownCloud Desktop Client - http://owncloud.org/
+## Run this command: wget -q http://download.opensuse.org/repositories/isv:ownCloud:community/xUbuntu_16.04/Release.key -O- | sudo apt-key add -
+deb http://download.opensuse.org/repositories/isv:/ownCloud:/community/xUbuntu_16.04/ /
+
+#### Tor: anonymity online - https://www.torproject.org
+## Run this command: sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 886DDD89
+deb http://deb.torproject.org/torproject.org xenial main
+
+
