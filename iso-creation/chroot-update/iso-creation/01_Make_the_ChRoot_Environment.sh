@@ -3,9 +3,9 @@ set -e
 here="`dirname \"$0\"`"
 
 echo "01 > creating mount points"
-mount none -t proc /proc
-mount none -t sysfs /sys
-mount none -t devpts /dev/pts
+mount none -t --bind proc /proc
+mount none -t --bind sysfs /sys
+mount none -t --bind devpts /dev/pts
 
 export HOME=/root
 export LC_ALL=C
