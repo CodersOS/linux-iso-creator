@@ -1,9 +1,5 @@
-
-# the download location of the iso files
-image_download="https://github.com/CodersOS/iso-base/archive/master.zip"
-
-# the location of the image
-image="/toiso/image"
+# the location of the files which are in the iso file
+image="/iso"
 
 # packages to remove for the filesystem.manifest-desktop files:
 REMOVE='ubiquity ubiquity-frontend-gtk ubiquity-frontend-kde casper lupin-casper live-initramfs user-setup discover1 xresprobe os-prober libdebian-installer4'

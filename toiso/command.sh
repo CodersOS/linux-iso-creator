@@ -7,10 +7,10 @@
 
 1>&2 echo "command > remove files"
 1>&2 ./clean_up.sh
-1>&2 ./remove_linux_kernels.sh
+#1>&2 ./remove_linux_kernels.sh
 
 1>&2 echo "command > populate iso"
-1>&2 ./vmlinuz_and_initrd.sh
+#1>&2 ./vmlinuz_and_initrd.sh
 1>&2 ./create_manifest.sh
 1>&2 ./compress_the_file_system.sh
 1>&2 ./calculate_md5.sh

@@ -4,3 +4,4 @@ dev/pts/*
 proc/*
 sys/*
 .dockerenv
+iso
