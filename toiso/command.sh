@@ -18,5 +18,5 @@
 
 if [ "$1" != "-q" ]
 then
-  cat "$iso_image"
+  ./iso.sh
 fi
