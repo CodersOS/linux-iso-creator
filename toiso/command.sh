@@ -16,4 +16,7 @@
 1>&2 ./calculate_md5.sh
 1>&2 ./create_iso_image_for_a_livecd.sh
 
-cat "$iso_image"
+if [ "$1" != "-q" ]
+then
+  cat "$iso_image"
+fi
